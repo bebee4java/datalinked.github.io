@@ -5,13 +5,48 @@
     <title>IDES 将数据连接起来</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+
+    <style type="text/css">
+        #show {
+            /* height: 100px; */
+            width: 1000px;
+            margin: auto;
+        }
+        .preview { 
+            width: 1200px;
+            margin: auto;
+            /* border: solid 1px red; */
+            /* height: 500px; */
+        }
+        #shell, #web {
+            width: 48%;
+            /* border: solid 1px red; */
+            display: block;
+            margin: 2px;
+        }
+        #shell {
+            float: left;
+        }
+        #web {
+            float: right;
+        }
+    </style>
 </head>
 <body>
 
-    <div>
+    <div id="show">
         <img src="images/ides.jpg" width="100%" height="100%">
     </div>
 
+    <div class="preview">
+        <div id="shell">
+            <img src="images/shell-mode.jpg" width="100%" height="100%">
+        </div>
+        <div id="web">
+            <img src="images/web-mode.jpg" width="100%" height="100%">
+        </div>
+    </div>
+    
 
 </body>
 </html>
