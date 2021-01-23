@@ -5,18 +5,43 @@
     <title>IDES 将数据连接起来</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="css/enlarge-img.css">
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
 
     <style type="text/css">
-        #show {
+        /* 去掉滚动条 */
+        ::-webkit-scrollbar{display: none;}
+        #show, #intro{
             /* height: 100px; */
             width: 1000px;
             margin: auto;
         }
+        #intro p {
+            font-size: 20px;
+            letter-spacing: .01em;
+            font-weight: 200;
+            font-style: italic;
+            text-align: center;
+        }
+
+        #intro #bar {
+            display: inline-block;
+            font-size: 16px;
+            font-style: normal;
+            text-decoration: none;
+            background-color: #4865D2;
+            padding: 10px 25px;
+            white-space: nowrap;
+            border-radius: 4px;
+            margin-left: 38px;
+            cursor: pointer;
+            color: white;
+        }
         .preview { 
             width: 1200px;
+            height: 380px;
             margin: auto;
-            /* border: solid 1px red; */
-            /* height: 500px; */
+            overflow:scroll;
         }
         #shell, #web {
             width: 48%;
@@ -30,23 +55,104 @@
         #web {
             float: right;
         }
+        #shell li, #web li {
+            margin-bottom: 16px;
+        }
+        .contact {
+            width: 1200px;
+            height: 240px;
+            margin: auto;
+        }
+        .contact .yuque {
+            float: left;
+        }
+        .contact .wechat {
+            height: 200px;
+            float: right;
+            margin-right: 120px;
+            overflow: scroll;
+        }
+        .contact .wechat img {
+            max-height: 100%;
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
 
     <div id="show">
-        <img src="images/ides.jpg" width="100%" height="100%">
+        <img src="images/ides.jpg" width="100%" height="100%" style="background-color: white;">
     </div>
-
-    <div class="preview">
-        <div id="shell">
-            <img src="images/shell-mode.jpg" width="100%" height="100%">
-        </div>
-        <div id="web">
-            <img src="images/web-mode.jpg" width="100%" height="100%">
-        </div>
+    <div id="intro">
+        <p>智能数据探索服务（IDES）</p>
+        <p>目标是统一 <strong>大数据+AI</strong> 开发流程。</p>
+        <p>简化数据处理、数据分析、数据挖掘、机器学习等数据探索过程。</p>
+        <p style="font-weight:bold;font-style:normal;">
+            宗旨：将数据连接起来，让每个人都能享受便捷和专业的数据探索服务！</p>
+        <p>
+            <a href="https://www.yuque.com/ides/docs" target = "blank" id="bar">开始使用</a>
+            <a href="https://github.com/bebee4java/ides/releases" target = "blank" id="bar">下载</a>
+        </p>
     </div>
     
+    <!-- 分割线 -->
+    <div style="border-top:1px dashed #cccccc;margin:auto;width:1240px;height:1px;overflow:hidden"></div>
 
+    <div class="preview">
+        <p><strong>我们有多种服务模式可供选择：</strong></p>
+        <div id="shell">
+            <div>
+                <p>模式一：Shell交互终端</p>
+                <li>该模式部署十分简单</li>
+                <li>方便对简单的脚本进行编写，提交运行，支持多行输入</li>
+                <li>非常适合简单的任务交互式开发</li>
+            </div>
+            <img class="enlarge-img" src="images/shell-mode.jpg" width="100%" height="100%">
+        </div>
+        <div id="web">
+            <div>
+                <p>模式二：web探索平台</p>
+                <li>该模式部署灵活，前后端分离，后端引擎可选择yarn/mesos/k8s等部署模式</li>
+                <li>具有丰富的任务管理、开发、调度等操作功能</li>
+                <li>可多实例进行部署，实现负载均衡，支持高并发数据探索</li>
+            </div>
+            <img class="enlarge-img" src="images/web-mode.jpg" width="100%" height="100%">
+        </div>
+        <div id="enlarge-div">
+            <div id="inner-div">
+                <img id="big-img" src=""/>
+            </div>
+        </div>
+        <div style="display:block;float:left;width:1200px;">
+            <p>可以参考这篇文档：<a href="https://www.yuque.com/ides/docs/mcv4w5" target = "blank">《谈谈DataLinked的部署模式》</a></p>
+        </div>
+    </div>
+
+    <!-- 分割线 -->
+    <div style="border-top:1px dashed #cccccc;margin:auto;width:1240px;height:1px;overflow:hidden"></div>
+    <div class="contact">
+        <p><strong style="color: crimson;">联系我们：</strong></p>
+        <div class="yuque">
+           <p>你可以去我们的项目空间交流，关注整个项目的发展！<a href="https://www.yuque.com/ides" target = "blank">入口在这</a></p>
+        </div>
+        <div class="wechat">
+            <p>或者扫描右面二维码，联系本人拉你进群聊。</p>
+            <img class="enlarge-img" src="images/wechat.png">
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            $(".enlarge-img").click(function () {
+                $("#big-img").attr("src", $(this).attr("src"));
+        
+                $("#enlarge-div").fadeIn("fast");//显示弹出层
+        
+                $("#enlarge-div").click(function () {//关闭弹出层
+                    $(this).fadeOut("fast");
+                });
+            });
+        });
+    </script>
 </body>
 </html>
