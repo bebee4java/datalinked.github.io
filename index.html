@@ -11,10 +11,19 @@
     <style type="text/css">
         /* 去掉滚动条 */
         ::-webkit-scrollbar{display: none;}
-        #show, #intro{
+        #show, #intro, #kpi{
             /* height: 100px; */
             width: 1000px;
             margin: auto;
+        }
+        #kpi {
+            text-align: right;
+        }
+        #kpi #github_stars, #kpi #docker_pulls{
+            display: inline-block;
+        }
+        #kpi #docker_pulls {
+            margin-left: 4px;
         }
         #intro p {
             font-size: 20px;
@@ -83,6 +92,11 @@
 
     <div id="show">
         <img src="images/ides.jpg" width="100%" height="100%" style="background-color: white;">
+    </div>
+    <div id="kpi">
+        <!-- https://starchart.cc/bebee4java/ides -->
+        <div id="github_stars"><a aria-label="github" href="https://github.com/bebee4java/ides" target="_blank" alt="Github Stars"><img src="https://badgen.net/github/stars/bebee4java/ides?label=github stars"></a></div>
+        <div id="docker_pulls"><a aria-label="dockerhub" href="https://hub.docker.com/r/datalinked/ides-shell" target="_blank" alt="Docker Pulls"><img src="https://badgen.net/docker/pulls/datalinked/ides-shell"></a></div>
     </div>
     <div id="intro">
         <p>智能数据探索服务（IDES）</p>
