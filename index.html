@@ -13,7 +13,7 @@
         ::-webkit-scrollbar{display: none;}
         #show, #intro, #kpi{
             /* height: 100px; */
-            width: 1000px;
+            width: 1200px;
             margin: auto;
         }
         #kpi {
@@ -77,7 +77,7 @@
         }
         .contact .wechat {
             float: right;
-            margin-right: 120px;
+            /* margin-right: 120px; */
         }
         .contact .wechat img {
             height: 180px;
@@ -85,6 +85,13 @@
             max-height: 100%;
             max-width: 100%;
             margin-left: 54px;
+        }
+        #split_line {
+            border-top:1px dashed #cccccc;
+            margin:auto;
+            width:1240px;
+            height:1px;
+            overflow:hidden
         }
     </style>
 </head>
@@ -111,7 +118,7 @@
     </div>
     
     <!-- 分割线 -->
-    <div style="border-top:1px dashed #cccccc;margin:auto;width:1240px;height:1px;overflow:hidden"></div>
+    <div id="split_line"></div>
 
     <div class="preview">
         <p><strong>我们有多种服务模式可供选择：</strong></p>
@@ -138,13 +145,13 @@
                 <img id="big-img" src=""/>
             </div>
         </div>
-        <div style="display:block;float:left;width:1200px;">
+        <div style="display:block;float:left;width:100%;">
             <p>可以参考这篇文档：<a href="https://www.yuque.com/ides/docs/mcv4w5" target = "blank">《谈谈DataLinked的部署模式》</a></p>
         </div>
     </div>
 
     <!-- 分割线 -->
-    <div style="border-top:1px dashed #cccccc;margin:auto;width:1240px;height:1px;overflow:hidden"></div>
+    <div id="split_line"></div>
     <div class="contact">
         <p><strong style="color: crimson;">联系我们：</strong></p>
         <div class="yuque">
